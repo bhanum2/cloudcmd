@@ -119,6 +119,8 @@ class CloudcmdApp(App):
                 kwargs['tenant_name'] = args.os_tenant_name
             if args.os_cacert:
                 kwargs['cacert'] = args.os_cacert
+            if args.os_project_domain_name:
+                kwargs['project_domain_name'] = args.os_project_domain_name
 
             self.cloud_obj = get_ext_cloud('openstack', **kwargs)
         elif os.path.isfile('/etc/ext_cloud/ext_cloud.conf'):

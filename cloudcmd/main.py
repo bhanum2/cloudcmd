@@ -121,7 +121,7 @@ class CloudcmdApp(App):
                 kwargs['cacert'] = args.os_cacert
 
             self.cloud_obj = get_ext_cloud('openstack', **kwargs)
-	elif os.path.isfile('/etc/ext_cloud/ext_cloud.conf'):
+        elif os.path.isfile('/etc/ext_cloud/ext_cloud.conf'):
 	    # load from config file
             self.cloud_obj = get_ext_cloud('openstack')
         else:
